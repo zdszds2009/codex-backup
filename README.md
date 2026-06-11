@@ -18,6 +18,7 @@ Related project docs:
 - [Usage Examples](./docs/usage-examples.md)
 - [Release Notes v0.1.0](./docs/releases/v0.1.0.md)
 - [Release Commands](./docs/release-commands.md)
+- [Demo Page](./demo/index.html)
 - [Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
 
