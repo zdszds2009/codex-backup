@@ -8,6 +8,7 @@ Codex Backup packages selected Codex Desktop conversations and optional project 
 
 - Safer default behavior for thread-based exports
 - Restore helper with automatic backup of target Codex state files
+- Package inspection output for pre-share review
 - Dependency-free Python scripts for package creation and restore
 
 ## Typical use cases
@@ -26,5 +27,5 @@ Codex Backup packages selected Codex Desktop conversations and optional project 
 
 ```powershell
 python -m unittest discover -s tests -p "test_*.py"
-python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py
+python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py .\scripts\inspect_package.py .\tests\test_cli_smoke.py
 ```

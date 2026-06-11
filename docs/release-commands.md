@@ -11,13 +11,12 @@ powershell -ExecutionPolicy Bypass -File .\scripts\publish_release.ps1
 ## Option 2: Run Git commands directly
 
 ```powershell
-git remote remove origin
-git remote add origin https://github.com/zdszds2009/codex-backup.git
+$version = "v0.2.0"
 git push -u origin main
-git tag -f v0.1.0
-git push origin v0.1.0 --force
+git tag $version
+git push origin $version
 ```
 
 ## Release body source
 
-Use `docs/releases/v0.1.0.md` as the GitHub release note body.
+Use the matching file under `docs/releases/`, for example `docs/releases/v0.2.0.md`.
