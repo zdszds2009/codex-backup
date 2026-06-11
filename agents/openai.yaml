@@ -1,0 +1,3 @@
+name: codex-project-restore-packager
+display_name: Codex Project Restore Packager
+description: Package Codex Desktop projects or individual conversations into restore-ready zip files.
