@@ -1,5 +1,5 @@
 param(
-  [string]$RemoteUrl = "https://github.com/zdszds2009/codex-project-restore-packager.git",
+  [string]$RemoteUrl = "https://github.com/zdszds2009/codex-backup.git",
   [string]$Tag = "v0.1.0"
 )
 

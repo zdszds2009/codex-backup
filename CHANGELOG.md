@@ -18,4 +18,4 @@ All notable changes to this project will be documented in this file.
 
 ### Notes
 
-- This is the first public-release candidate, not a compatibility guarantee across future Codex Desktop schema changes
+- This is the first public-release candidate for Codex Backup, not a compatibility guarantee across future Codex Desktop schema changes

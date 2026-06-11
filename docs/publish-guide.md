@@ -4,7 +4,7 @@ Use this once the repository is ready to go public on GitHub.
 
 ## 1. Create the remote repository
 
-Create a new public repository named `codex-project-restore-packager` under the `zdszds2009` account.
+Create a new public repository named `codex-backup` under the `zdszds2009` account.
 
 Recommended settings:
 
@@ -18,7 +18,7 @@ Recommended settings:
 From the repository root:
 
 ```powershell
-git remote add origin https://github.com/zdszds2009/codex-project-restore-packager.git
+git remote add origin https://github.com/zdszds2009/codex-backup.git
 git push -u origin main
 ```
 

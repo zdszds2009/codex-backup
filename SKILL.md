@@ -1,11 +1,11 @@
 ---
-name: codex-project-restore-packager
+name: codex-backup
 description: Package local Codex Desktop projects or individual conversations into a portable restore package with project files, thread metadata, session index entries, rollout history, and restore tools.
 metadata:
   short-description: Package Codex projects or conversations for restore
 ---
 
-# Codex Project Restore Packager
+# Codex Backup
 
 Use this skill when the user wants to package one or more local Codex Desktop projects, or one or more individual conversations, into a restore-ready archive.
 

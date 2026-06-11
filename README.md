@@ -1,4 +1,4 @@
-# Codex Project Restore Packager
+# Codex Backup
 
 Package local Codex Desktop projects or individual conversations into a portable restore package.
 

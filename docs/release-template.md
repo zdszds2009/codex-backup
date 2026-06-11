@@ -2,7 +2,7 @@
 
 ## Summary
 
-Codex Project Restore Packager packages selected Codex Desktop conversations and optional project files into a restore-ready archive for migration and recovery workflows.
+Codex Backup packages selected Codex Desktop conversations and optional project files into a restore-ready archive for migration and recovery workflows.
 
 ## Highlights
 

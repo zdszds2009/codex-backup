@@ -4,7 +4,7 @@ This file collects the minimum repository checklist and two draft answers for th
 
 ## Suggested GitHub metadata
 
-- Repository name: `codex-project-restore-packager`
+- Repository name: `codex-backup`
 - Short description: `Export and restore local Codex Desktop conversations and projects as portable recovery packages.`
 - Topics: `codex`, `chatgpt`, `openai`, `desktop-tooling`, `backup`, `restore`, `windows`, `python`
 
@@ -21,7 +21,7 @@ This file collects the minimum repository checklist and two draft answers for th
 
 ## Suggested repository blurb
 
-Codex Project Restore Packager exports local Codex Desktop conversations and project state into a portable restore package, making it possible to migrate a project, preserve a debugging thread, or recover a working context on another Windows machine.
+Codex Backup exports local Codex Desktop conversations and project state into a portable restore package, making it possible to migrate a project, preserve a debugging thread, or recover a working context on another Windows machine.
 
 ## Submission checklist
 
@@ -34,11 +34,11 @@ Codex Project Restore Packager exports local Codex Desktop conversations and pro
 
 ## Draft: Why this repository deserves support
 
-Codex Project Restore Packager fills a practical gap for Codex Desktop users: exporting and restoring local project context, conversation metadata, and rollout history. It helps maintainers preserve debugging sessions, migrate active work between machines, and recover important context after environment changes. The project is small, dependency-free, and focused on a real operational workflow that many Codex users will otherwise need to solve manually and unsafely.
+Codex Backup fills a practical gap for Codex Desktop users: exporting and restoring local project context, conversation metadata, and rollout history. It helps maintainers preserve debugging sessions, migrate active work between machines, and recover important context after environment changes. The project is small, dependency-free, and focused on a real operational workflow that many Codex users will otherwise need to solve manually and unsafely.
 
 ## Stronger version once the repo is public
 
-Codex Project Restore Packager addresses a practical gap in the Codex Desktop workflow: there is no built-in, maintainer-friendly path for exporting project context, thread metadata, and rollout history for migration or recovery. This project turns that manual recovery work into a repeatable process with explicit safety defaults, test coverage, and restore instructions. It is useful for open-source maintainers who move across machines, preserve debugging context, or need to recover active work without editing local Codex state by hand.
+Codex Backup addresses a practical gap in the Codex Desktop workflow: there is no built-in, maintainer-friendly path for exporting project context, thread metadata, and rollout history for migration or recovery. This project turns that manual recovery work into a repeatable process with explicit safety defaults, test coverage, and restore instructions. It is useful for open-source maintainers who move across machines, preserve debugging context, or need to recover active work without editing local Codex state by hand.
 
 ## Draft: How the API credits would be used
 

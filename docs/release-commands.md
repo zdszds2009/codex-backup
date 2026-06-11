@@ -12,7 +12,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\publish_release.ps1
 
 ```powershell
 git remote remove origin
-git remote add origin https://github.com/zdszds2009/codex-project-restore-packager.git
+git remote add origin https://github.com/zdszds2009/codex-backup.git
 git push -u origin main
 git tag -f v0.1.0
 git push origin v0.1.0 --force
