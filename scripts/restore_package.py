@@ -205,7 +205,9 @@ def merge_state_db(
 
     thread_ids = [thread["id"] for thread in manifest.get("threads", []) if thread.get("id")]
     placeholders = ",".join("?" for _ in thread_ids)
-    with sqlite3.connect(source_db) as src, sqlite3.connect(target_db) as dst:
+    src = sqlite3.connect(source_db)
+    dst = sqlite3.connect(target_db)
+    try:
         delete_existing_thread_rows(dst, thread_ids)
         copy_table_rows(src, dst, "threads", f"where id in ({placeholders})", thread_ids)
         copy_table_rows(src, dst, "thread_dynamic_tools", f"where thread_id in ({placeholders})", thread_ids)
@@ -230,6 +232,9 @@ def merge_state_db(
             if "model_provider" in thread_cols:
                 dst.execute("update threads set model_provider='custom' where id=?", (thread_id,))
         dst.commit()
+    finally:
+        src.close()
+        dst.close()
 
 
 def patch_paths_in_json(value: Any, source_to_target: dict[str, str]) -> Any:

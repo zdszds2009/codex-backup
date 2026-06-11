@@ -58,7 +58,8 @@ def json_dumps(data: Any) -> str:
     return json.dumps(data, ensure_ascii=False, indent=2)
 
 
-def connect_state(path: Path = STATE_DB) -> sqlite3.Connection:
+def connect_state(path: Path | None = None) -> sqlite3.Connection:
+    path = STATE_DB if path is None else path
     if not path.exists():
         raise SystemExit(f"Codex state database not found: {path}")
     con = sqlite3.connect(path)
@@ -83,10 +84,13 @@ def quote_ident(name: str) -> str:
 
 
 def load_threads() -> list[dict[str, Any]]:
-    with connect_state() as con:
+    con = connect_state()
+    try:
         if not table_exists(con, "threads"):
             raise SystemExit("The Codex state database does not contain a threads table.")
         return [dict(row) for row in con.execute("select * from threads order by updated_at desc")]
+    finally:
+        con.close()
 
 
 def list_candidates() -> None:
@@ -298,7 +302,6 @@ def copy_rollout_normalized(src: Path, dst: Path) -> int:
 
 
 def copy_rollouts(selected: list[dict[str, Any]], codex_dir: Path) -> list[dict[str, Any]]:
-    rollout_root = codex_dir / "rollouts"
     entries: list[dict[str, Any]] = []
     for row in selected:
         thread_id = str(row.get("id") or "")
@@ -314,13 +317,13 @@ def copy_rollouts(selected: list[dict[str, Any]], codex_dir: Path) -> list[dict[
             rel = src.relative_to(CODEX_HOME)
         except ValueError:
             rel = Path("external-rollouts") / src.name
-        dst = rollout_root / rel
+        dst = codex_dir / rel
         line_count = copy_rollout_normalized(src, dst)
         entries.append(
             {
                 "thread_id": thread_id,
                 "source": str(src),
-                "path": f"codex/rollouts/{rel.as_posix()}",
+                "path": f"codex/{rel.as_posix()}",
                 "target_codex_relative_path": rel.as_posix(),
                 "line_count": line_count,
             }
@@ -415,6 +418,22 @@ def script_path(name: str) -> Path:
     return Path(__file__).resolve().parent / name
 
 
+def collect_schema_snapshot() -> dict[str, Any]:
+    table_names = ["threads", "thread_dynamic_tools", "thread_spawn_edges"]
+    tables: dict[str, list[str]] = {}
+    con = connect_state()
+    try:
+        for table in table_names:
+            if table_exists(con, table):
+                tables[table] = table_columns(con, table)
+    finally:
+        con.close()
+    return {
+        "state_db": STATE_DB.name,
+        "tables": tables,
+    }
+
+
 def write_manifest(
     package_dir: Path,
     package_name: str,
@@ -430,6 +449,7 @@ def write_manifest(
         "source_codex_home": str(CODEX_HOME),
         "thread_count": len(selected),
         "session_index_entries": session_index_entries,
+        "source_schema": collect_schema_snapshot(),
         "projects": projects,
         "threads": [
             {

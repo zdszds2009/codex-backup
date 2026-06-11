@@ -27,6 +27,7 @@ This repository contains:
 - a Codex skill entry point in `SKILL.md`
 - a packaging script in `scripts/build_restore_package.py`
 - a restore helper in `scripts/restore_package.py`
+- a package inspection helper in `scripts/inspect_package.py`
 
 Related project docs:
 
@@ -39,6 +40,7 @@ Related project docs:
 - [Demo Page](./demo/index.html)
 - [Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
+- [Compatibility Notes](./docs/compatibility.md)
 
 The resulting package can include:
 
@@ -183,7 +185,7 @@ When you run `build_restore_package.py`, the tool performs the following sequenc
    - Explicit `--project` roots are included.
    - Thread-selected cwd folders are only included when `--include-thread-cwd-files` is passed.
 8. Write a manifest and restore instructions.
-   - The manifest records thread metadata, included projects, and rollout mappings.
+   - The manifest records thread metadata, included projects, rollout mappings, and a small source-schema snapshot.
 9. Validate and zip the result.
    - The final archive is checked for required files before it is returned.
 
@@ -256,6 +258,12 @@ Package conversation state only, without any project files:
 python .\scripts\build_restore_package.py --thread-id "thread_id_here" --no-project-files --out "$env:USERPROFILE\Desktop"
 ```
 
+Inspect a package before sharing or restoring it:
+
+```powershell
+python .\scripts\inspect_package.py "C:\Users\you\Desktop\codex-restore-20260611-120000.zip"
+```
+
 Restore on another machine:
 
 ```powershell
@@ -273,9 +281,10 @@ python .\tools\restore_package.py --package "." --project-target "my-project=C:\
 Before sharing or restoring a package:
 
 1. Open the zip and confirm `manifest.json` is present.
-2. Check whether `project_files/` exists when you did not intend to include source files.
-3. Read `RESTORE_INSTRUCTIONS.md`.
-4. Restore into a test profile first if the package contains important or sensitive work.
+2. Run `python .\scripts\inspect_package.py <package.zip>` and review the reported thread and project summary.
+3. Check whether `project_files/` exists when you did not intend to include source files.
+4. Read `RESTORE_INSTRUCTIONS.md`.
+5. Restore into a test profile first if the package contains important or sensitive work.
 
 ## Repository layout
 
@@ -293,11 +302,13 @@ Before sharing or restoring a package:
 |   |-- pull_request_template.md
 |   `-- workflows/ci.yml
 |-- docs/
-|   `-- codex-for-oss-application.md
+|   |-- codex-for-oss-application.md
+|   `-- compatibility.md
 |-- agents/
 |   `-- openai.yaml
 |-- scripts/
 |   |-- build_restore_package.py
+|   |-- inspect_package.py
 |   `-- restore_package.py
 `-- tests/
     `-- test_cli_smoke.py
@@ -320,6 +331,8 @@ Before sharing or restoring a package:
 - Assumes a local `state_5.sqlite` schema compatible with the scripts
 - Does not promise forward compatibility with future Codex Desktop storage changes
 - Not intended to merge two independently edited versions of the same conversation
+
+See [Compatibility Notes](./docs/compatibility.md) for the specific tables currently expected by the tooling and how this repository handles minor schema drift.
 
 ## Development
 

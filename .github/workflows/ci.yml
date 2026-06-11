@@ -23,4 +23,4 @@ jobs:
         run: python -m unittest discover -s tests -p "test_*.py"
 
       - name: Validate script syntax
-        run: python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py
+        run: python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py .\scripts\inspect_package.py .\tests\test_cli_smoke.py

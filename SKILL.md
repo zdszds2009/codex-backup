@@ -40,6 +40,7 @@ Also use this skill when the user says any of the following:
 5. Match project paths in both normal Windows form and long-path form (`\\?\C:\...`).
 6. Normalize rollout `session_meta.payload.model_provider` to `custom` for current Codex Desktop visibility.
 7. Validate that the final zip opens and includes `manifest.json`, `codex/backup_state.sqlite`, and rollout JSONL files for selected conversations.
+8. When the package will be shared or restored later, run `scripts/inspect_package.py` on the generated zip and review the thread and project summary first.
 
 ## Safety defaults
 

@@ -31,6 +31,7 @@ Codex Backup exports local Codex Desktop conversations and project state into a 
 - A short demo exists
 - At least one real usage example or maintainer note is public
 - The application answers below are updated with current usage evidence
+- The wording matches the current OpenAI program page: API credits, six months of ChatGPT Pro with Codex, and conditional Codex Security
 
 ## Draft: Why this repository deserves support
 
@@ -38,7 +39,7 @@ Codex Backup fills a practical gap for Codex Desktop users: exporting and restor
 
 ## Stronger version once the repo is public
 
-Codex Backup addresses a practical gap in the Codex Desktop workflow: there is no built-in, maintainer-friendly path for exporting project context, thread metadata, and rollout history for migration or recovery. This project turns that manual recovery work into a repeatable process with explicit safety defaults, test coverage, and restore instructions. It is useful for open-source maintainers who move across machines, preserve debugging context, or need to recover active work without editing local Codex state by hand.
+Codex Backup addresses a practical gap in the Codex Desktop workflow: there is no built-in, maintainer-friendly path for exporting project context, thread metadata, and rollout history for migration or recovery. This project turns that manual recovery work into a repeatable process with explicit safety defaults, public documentation, CI, end-to-end fixture coverage, package inspection output, and restore instructions. It is useful for open-source maintainers who move across machines, preserve debugging context, or need to recover active work without editing local Codex state by hand.
 
 ## Draft: How the API credits would be used
 
@@ -46,7 +47,7 @@ API credits would be used to improve package validation, restoration checks, and
 
 ## Stronger version once the repo is public
 
-API credits would be used to build safer validation and recovery tooling around Codex project portability: preflight checks before packaging, package inspection summaries, restore verification, and clearer maintainer guidance for sensitive project exports. The credits would directly support improving reliability for maintainers who use Codex on active open-source projects and need a trustworthy way to migrate or recover local working context.
+API credits would be used to build safer validation and recovery tooling around Codex project portability: preflight checks before packaging, package inspection summaries, restore verification, redaction support for safer sharing, and clearer maintainer guidance for sensitive project exports. The credits would directly support improving reliability for maintainers who use Codex on active open-source projects and need a trustworthy way to migrate or recover local working context.
 
 ## Chinese drafting notes
 

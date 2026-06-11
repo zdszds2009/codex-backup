@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- End-to-end fixture test covering package creation, restore, path remapping, rollout normalization, and target-state backups
+- `scripts/inspect_package.py` for pre-share and pre-restore package review
+- Compatibility note documenting current schema expectations and manifest schema snapshots
+
+### Changed
+
+- Packaging manifests now include a source-schema snapshot for easier compatibility debugging
+- Rollout package-path metadata now matches the actual archive layout
+- SQLite connections are explicitly closed in package and restore flows to avoid Windows file-lock issues
+
 ## [0.1.0] - 2026-06-11
 
 ### Added
