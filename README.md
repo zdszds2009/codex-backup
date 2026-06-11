@@ -17,6 +17,7 @@ Related project docs:
 - [Demo Script](./docs/demo-script.md)
 - [Usage Examples](./docs/usage-examples.md)
 - [Release Notes v0.1.0](./docs/releases/v0.1.0.md)
+- [Release Commands](./docs/release-commands.md)
 - [Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
 
