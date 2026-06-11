@@ -21,18 +21,6 @@ Codex Backup addresses a practical gap in the Codex Desktop workflow: there is n
 
 API credits would be used to improve validation and recovery tooling around Codex project portability: package preflight checks, package inspection summaries, restore verification, and clearer maintainer guidance for sensitive project exports. The credits would directly support improving reliability for maintainers who use Codex on active open-source projects and need a trustworthy way to migrate or recover local working context.
 
-## Turkish: Short repository description
-
-Codex Backup, Windows üzerinde yerel Codex Desktop konuşmalarını ve proje durumunu taşınabilir kurtarma paketleri olarak dışa aktaran ve geri yükleyen bir araçtır.
-
-## Turkish: Why this repository deserves support
-
-Codex Backup, Codex Desktop iş akışındaki pratik bir boşluğu hedefliyor: proje bağlamını, thread meta verilerini ve rollout geçmişini taşıma veya kurtarma amacıyla dışa aktarmak için yerleşik ve bakımcı dostu bir yol yok. Bu proje, elde SQLite düzenleme veya `.codex` dosyalarını rastgele kopyalama gibi riskli işlemleri; açık güvenlik varsayılanları, testler ve geri yükleme talimatları olan tekrar edilebilir bir sürece dönüştürüyor. Farklı makinelerde çalışan, hata ayıklama bağlamını korumak isteyen veya aktif geliştirme bağlamını yerel Codex durumunu elle düzenlemeden geri kazanmak zorunda olan açık kaynak bakımcıları için kullanışlıdır.
-
-## Turkish: How the API credits would be used
-
-API kredileri, Codex proje taşınabilirliği etrafındaki doğrulama ve kurtarma araçlarını geliştirmek için kullanılacaktır: paket ön kontrolü, paket içeriği özetleri, geri yükleme doğrulaması ve hassas proje dışa aktarımları için daha açık bakımcı rehberliği. Amaç, aktif açık kaynak projelerinde Codex kullanan bakımcılar için güvenilirliği artırmak, manuel kurtarma yükünü azaltmak ve yerel geliştirme bağlamını taşıma veya geri yükleme sırasında daha yüksek güven sağlamaktır.
-
 ## Recommended supporting evidence to mention once available
 
 - Public repository with `README`, `SECURITY`, `CONTRIBUTING`, CI, and tests
