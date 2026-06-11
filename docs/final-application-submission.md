@@ -13,13 +13,25 @@ Use this file as the final working copy for the OpenAI `Codex for Open Source` a
 
 Codex Backup exports and restores local Codex Desktop conversations and project state as portable recovery packages for migration and recovery workflows on Windows.
 
-## Final draft: Why this repository deserves support
+## English: Why this repository deserves support
 
 Codex Backup addresses a practical gap in the Codex Desktop workflow: there is no built-in, maintainer-friendly path for exporting project context, thread metadata, and rollout history for migration or recovery. This project turns that manual recovery work into a repeatable process with explicit safety defaults, tests, and restore instructions. It is useful for open-source maintainers who move across machines, preserve debugging context, or need to recover active work without editing local Codex state by hand.
 
-## Final draft: How the API credits would be used
+## English: How the API credits would be used
 
 API credits would be used to improve validation and recovery tooling around Codex project portability: package preflight checks, package inspection summaries, restore verification, and clearer maintainer guidance for sensitive project exports. The credits would directly support improving reliability for maintainers who use Codex on active open-source projects and need a trustworthy way to migrate or recover local working context.
+
+## Turkish: Short repository description
+
+Codex Backup, Windows üzerinde yerel Codex Desktop konuşmalarını ve proje durumunu taşınabilir kurtarma paketleri olarak dışa aktaran ve geri yükleyen bir araçtır.
+
+## Turkish: Why this repository deserves support
+
+Codex Backup, Codex Desktop iş akışındaki pratik bir boşluğu hedefliyor: proje bağlamını, thread meta verilerini ve rollout geçmişini taşıma veya kurtarma amacıyla dışa aktarmak için yerleşik ve bakımcı dostu bir yol yok. Bu proje, elde SQLite düzenleme veya `.codex` dosyalarını rastgele kopyalama gibi riskli işlemleri; açık güvenlik varsayılanları, testler ve geri yükleme talimatları olan tekrar edilebilir bir sürece dönüştürüyor. Farklı makinelerde çalışan, hata ayıklama bağlamını korumak isteyen veya aktif geliştirme bağlamını yerel Codex durumunu elle düzenlemeden geri kazanmak zorunda olan açık kaynak bakımcıları için kullanışlıdır.
+
+## Turkish: How the API credits would be used
+
+API kredileri, Codex proje taşınabilirliği etrafındaki doğrulama ve kurtarma araçlarını geliştirmek için kullanılacaktır: paket ön kontrolü, paket içeriği özetleri, geri yükleme doğrulaması ve hassas proje dışa aktarımları için daha açık bakımcı rehberliği. Amaç, aktif açık kaynak projelerinde Codex kullanan bakımcılar için güvenilirliği artırmak, manuel kurtarma yükünü azaltmak ve yerel geliştirme bağlamını taşıma veya geri yükleme sırasında daha yüksek güven sağlamaktır.
 
 ## Recommended supporting evidence to mention once available
 
