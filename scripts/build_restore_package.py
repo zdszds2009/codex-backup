@@ -14,6 +14,9 @@ from typing import Any
 
 
 CODEX_HOME = Path.home() / ".codex"
+CODEX_HOME_OVERRIDE = Path(os.environ.get("CODEX_HOME_OVERRIDE", "")) if os.environ.get("CODEX_HOME_OVERRIDE") else None
+if CODEX_HOME_OVERRIDE is not None:
+    CODEX_HOME = CODEX_HOME_OVERRIDE
 STATE_DB = CODEX_HOME / "state_5.sqlite"
 SESSION_INDEX = CODEX_HOME / "session_index.jsonl"
 GLOBAL_STATE = CODEX_HOME / ".codex-global-state.json"

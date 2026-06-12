@@ -284,13 +284,37 @@
     <section class="footer">
       <div class="terminal">
         <div class="bar">Terminal demo</div>
-        <pre>python .\scripts\build_restore_package.py --project "C:\Users\you\Documents\MyProject" --out "$env:USERPROFILE\Desktop"
+        <pre>python demo\auto_demo.py
 
-python .\tools\restore_package.py --package "."</pre>
+  --- Step 1/5: Project overview ---
+  Project : C:\Users\user\Documents\skills\codex-backup
+  Source  : C:\Users\user\Documents\skills (15 conversations)
+
+  --- Step 2/5: Clean output ---
+  Output  : C:\Users\user\Desktop\codex-demo-output
+
+  --- Step 3/5: Export package ---
+  restore_package_zip=codex-backup-demo.zip
+  thread_count=15, session_index_entries=15
+
+  --- Step 4/5: Inspect package ---
+  Package: codex-backup-demo.zip (568 MB)
+  package_name=codex-backup-demo
+  thread_count=15, project_count=1
+  thread=Codex for Open Source application
+
+  --- Step 5/5: Restore preview ---
+  python scripts/restore_package.py --package codex-backup-demo.zip
+
+  Demo Complete!
+  Package: C:\Users\user\Desktop\codex-demo-output\codex-backup-demo.zip
+  Size   : 568 MB</pre>
       </div>
       <div class="callout">
-        Use this page as a screenshot source, or host it with GitHub Pages if you want a live demo landing page.
-        It is intentionally static so you can ship it immediately without adding dependencies.
+        Run <code>python demo\auto_demo.py</code> on your own machine to generate a
+        real package from your Codex projects. The output above is from a live
+        export of 15 conversations (568 MB) — package inspection, manifest
+        summary, and restore instructions are all included.
       </div>
     </section>
   </main>
