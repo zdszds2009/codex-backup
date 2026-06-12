@@ -380,14 +380,14 @@ Please use the issue tracker for bug reports, feature requests, and usage feedba
 
 ## Launch checklist
 
-Before publishing the repository and applying:
+Before submitting the Codex for Open Source application:
 
-1. Record a short demo GIF or screenshot set.
-2. Create the first GitHub release.
-3. Add one or two real-world restore examples to the README or release notes.
-4. Open at least one roadmap issue and one known-limitation issue publicly.
-5. Verify the application answers in `docs/codex-for-oss-application.md` still match the repository state.
-
+- Publish GitHub Releases for v0.1.0, v0.2.0, and v0.3.0.
+- Record a short demo showing README, list, package creation, and package inspection.
+- Invite 3 to 5 real GitHub users to review the repository.
+- Run tests before any release.
+- Verify application answers in docs/codex-for-oss-form-answers.md match the repository.
+- See Application Success Plan in docs/application-success-plan.md.
 ## License
 
 MIT
