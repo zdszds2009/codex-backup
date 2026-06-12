@@ -15,6 +15,19 @@ For open-source maintainers, the core value is straightforward:
 
 This is not a generic backup of everything in `.codex`. It is a targeted export-and-restore workflow for the specific projects and conversations you choose.
 
+## Who this is for
+
+Codex Backup is for developers and open-source maintainers who use Codex Desktop as part of active project work and need local recovery rather than cloud sync.
+
+It is most useful when you:
+
+- use Codex Desktop on more than one Windows machine
+- want to preserve a debugging or implementation thread before rebuilding an environment
+- need to recover selected Codex context after local profile damage
+- want a reviewable package instead of manually copying `.codex` files
+
+The project was built around Codex-native workflows, but its value is the recovery workflow itself: it helps make Codex Desktop project context portable, inspectable, and safer to restore.
+
 ## Typical maintainer use cases
 
 - Move an active repository and its related Codex conversations to another Windows machine
@@ -33,9 +46,13 @@ Related project docs:
 
 - [Launch Checklist](./docs/launch-checklist.md)
 - [Codex for OSS Application Draft](./docs/codex-for-oss-application.md)
+- [Application Success Plan](./docs/application-success-plan.md)
+- [Chinese Outreach Kit](./docs/outreach-cn.md)
 - [Demo Script](./docs/demo-script.md)
 - [Usage Examples](./docs/usage-examples.md)
+- [User Feedback Guide](./docs/user-feedback.md)
 - [Release Notes v0.1.0](./docs/releases/v0.1.0.md)
+- [Release Notes v0.2.0](./docs/releases/v0.2.0.md)
 - [Release Commands](./docs/release-commands.md)
 - [Demo Page](./demo/index.html)
 - [Roadmap](./ROADMAP.md)
@@ -345,8 +362,21 @@ python -m unittest discover -s tests -p "test_*.py"
 Validate syntax:
 
 ```powershell
-python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py
+python -m py_compile .\scripts\build_restore_package.py .\scripts\restore_package.py .\scripts\inspect_package.py .\tests\test_cli_smoke.py
 ```
+
+## Feedback wanted
+
+Public feedback helps validate whether this workflow solves a real maintainer problem outside the original development machine.
+
+Useful feedback includes:
+
+- whether `--list` finds the expected Codex projects and conversations
+- whether package inspection output is understandable before restore
+- whether restore instructions are clear enough to follow on a test profile
+- what safety checks would make you more comfortable before sharing a package
+
+Please use the issue tracker for bug reports, feature requests, and usage feedback. The fastest low-risk test is to run `--list`, inspect the README, and leave a short issue saying whether the workflow would help your own Codex Desktop setup.
 
 ## Launch checklist
 

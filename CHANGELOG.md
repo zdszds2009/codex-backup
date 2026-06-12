@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-06-12
+
+### Added
+
+- Public usage-feedback issue template for README reviews, list-command checks, package inspection, and test restores
+- Chinese outreach kit for asking real GitHub users to review the project with their own accounts
+- User feedback guide describing low-risk review paths and privacy-safe feedback
+- Codex for Open Source application success plan with positioning, evidence targets, and final answer drafts
+
+### Changed
+
+- README now clarifies the intended audience, feedback request, and Codex Desktop maintainer value proposition
+
 ## [0.2.0] - 2026-06-11
 
 ### Added
