@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Set up GitHub CLI
-        uses: cli/cli-action@v2
-
       - name: Run auto-reply script
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
