@@ -4,6 +4,7 @@ REPO = os.environ["REPO"]
 GH_TOKEN = os.environ["GH_TOKEN"]
 
 STATE_FILE = ".github/last_checked.json"
+SUMMARY_FILE = os.environ.get("GITHUB_STEP_SUMMARY")
 
 def run_gh(*args):
     return subprocess.run(
@@ -21,6 +22,7 @@ if not last_checked:
     last_checked = datetime.datetime.utcnow().isoformat()
 
 now = datetime.datetime.utcnow().isoformat()
+new_comment_rows = []
 
 # Fetch all open issues
 result = run_gh("issue", "list", "--state=open", "--json=number,title,comments,updatedAt")
@@ -47,6 +49,14 @@ for issue in issues:
             author = comment["user"]["login"]
             print(f"\n>>> New external comment on #{num} by @{author}")
             print(f">>> Body: {body[:200]}")
+            new_comment_rows.append(
+                {
+                    "issue": num,
+                    "author": author,
+                    "created_at": created,
+                    "body": body,
+                }
+            )
 
             # Determine reply based on comment content
             if any(kw in body for kw in ["star", "Star", "期待", "不错", "有用", "好用", "支持", "加油"]):
@@ -94,3 +104,20 @@ if not new_comments_found:
     print("\nNo new external comments found.")
 else:
     print(f"\nDone. Checked {len(issues)} issues, replied to new comments.")
+
+if SUMMARY_FILE:
+    with open(SUMMARY_FILE, "a", encoding="utf-8") as summary:
+        summary.write("## Codex Backup auto-reply report\n\n")
+        summary.write(f"- Checked at: `{now} UTC`\n")
+        summary.write(f"- Open issues scanned: `{len(issues)}`\n")
+        if not new_comment_rows:
+            summary.write("- New external comments: `0`\n")
+        else:
+            summary.write(f"- New external comments: `{len(new_comment_rows)}`\n\n")
+            for item in new_comment_rows:
+                summary.write(f"### Issue #{item['issue']} by @{item['author']}\n\n")
+                summary.write(f"- Created at: `{item['created_at']}`\n")
+                summary.write("- Comment:\n\n")
+                summary.write(
+                    f"> {item['body'].replace(chr(10), chr(10) + '> ')}\n\n"
+                )
