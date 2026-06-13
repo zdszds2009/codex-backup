@@ -1,6 +1,9 @@
-# Codex Backup
+﻿# Codex Backup
 
-Package local Codex Desktop projects or individual conversations into a portable restore package.
+> **Built for Codex Desktop. Built inside Codex Desktop.**
+> A Codex-native Skills plugin for exporting and restoring your local Codex projects, conversations, and workflow history — no external config, no pip install, no CLI memorization.
+
+Package local Codex Desktop projects or individual conversations into a portable restore package. projects or individual conversations into a portable restore package.
 
 Status: pre-1.0, Windows-focused, designed for local Codex Desktop recovery and migration workflows.
 
