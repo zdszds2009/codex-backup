@@ -39,7 +39,7 @@ def github_request(path, method="GET", data=None):
 
 def load_last_checked():
     if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, encoding="utf-8") as f:
+        with open(STATE_FILE, encoding="utf-8-sig") as f:
             timestamp = json.load(f).get("timestamp")
             if timestamp:
                 return timestamp
